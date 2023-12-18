@@ -2,11 +2,13 @@
   "name": "eb-v4",
   "version": "0.1.0",
   "private": true,
+  "main": "function.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && cross-env NODE_ENV=production firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -18,10 +20,13 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "cross-env": "^7.0.3",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "latest",
     "eslint-plugin-prettier": "latest",
+    "firebase-admin": "^11.11.1",
+    "firebase-functions": "^4.5.0",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"

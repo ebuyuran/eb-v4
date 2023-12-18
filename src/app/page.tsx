@@ -1,5 +1,7 @@
-import Image from 'next/image';
+interface HomeProps {}
 
-export default function Home() {
-  return <div></div>;
+function Home(props: HomeProps) {
+  return <div>Home Component</div>;
 }
+
+export default Home;
