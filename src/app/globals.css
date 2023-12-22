@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --primary-colour: #ffe500;
+  --secondary-colour: #00ffff;
+  --tertiary-colour: #ff003b;
+  --side-clip-size: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*::selection {
+  color: black;
+  background-color: var(--primary-colour);
 }
 
 body {
@@ -24,4 +25,156 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
 }
+
+h1 {
+  color: var(--primary-colour);
+  font-size: 32pt;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  color: var(--primary-colour);
+  font-size: 27pt;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+h3 {
+  color: var(--primary-colour);
+  font-size: 18pt;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  z-index: -1;
+  background: linear-gradient(135deg, transparent 5%, var(--tertiary-colour) 5%, var(--tertiary-colour) 95%, transparent 95%);;
+  width: 100%;
+  height: 100%;
+}
+
+button, button::after {
+  position: relative;
+  padding: .5rem 2rem;
+  background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
+  color: black;
+  font-weight: 600;
+  outline: transparent;
+  cursor: pointer;
+}
+
+button::after {
+  --slice0: inset(50% 50% 50% 50%);
+  --slice1: inset(80% -6px 0 0);
+  --slice2: inset(50% -6px 30% 0);
+  --slice3: inset(10% -6px 85% 0);
+  --slice4: inset(40% -6px 43% 0);
+  --slice5: inset(80% -6px 50% 0);
+
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, var(--secondary-colour) 5%, var(--primary-colour) 5%);
+  text-shadow: -3px -3px 0 var(--secondary-colour), 3px 3px 9px var(--secondary-colour);
+  clip-path: var(--slice0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+.logo-glitch:hover + div > svg {
+  --slice0: inset(50% 50% 50% 50%);
+  --slice1: inset(80% -6px 0 0);
+  --slice2: inset(50% -6px 30% 0);
+  --slice3: inset(10% -6px 85% 0);
+  --slice4: inset(40% -6px 43% 0);
+  --slice5: inset(80% -6px 50% 0);
+}
+
+.logo-glitch:hover + div > svg {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice3);
+    transform: translate(0, 5px);
+  }
+  40% {
+    clip-path: var(--slice2);
+    transform: translate(-5px, 0);
+  }
+  50% {
+    clip-path: var(--slice3);
+    transform: translate(5px, 0);
+  }
+  60% {
+    clip-path: var(--slice4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice1);
+    transform: translate(-10px, 0);
+  }
+  100% {
+    clip-path: var(--slice1);
+    transform: translate(0);
+  }
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 4px;
+  clip-path: polygon(5px 0%, 40px 0%, 45px 2px, calc(100% - 2px) 2px, 100% 4px, 0% 4px);
+  background: var(--primary-colour);
+}
+
+/* 
+.divider {
+  --full-height: 12px;
+  --thin-height: calc(var(--full-height) * 0.66);
+  --think-line-width: 100px;
+  display: block;
+  width: 100%;
+  height: var(--full-height);
+  clip-path: polygon(var(--full-height) 0%, var(--think-line-width) 0%, calc(var(--think-line-width) + var(--thin-height)) var(--thin-height), calc(100% - 2px) var(--thin-height), 100% var(--full-height), 0% var(--full-height));
+  background: var(--primary-colour);
+} */
