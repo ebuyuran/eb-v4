@@ -9,7 +9,13 @@
   --primary-colour: #ffe500;
   --secondary-colour: #00ffff;
   --tertiary-colour: #ff003b;
-  --side-clip-size: 12px;
+
+  --glitch-slice0: inset(50% 50% 50% 50%);
+  --glitch-slice1: inset(80% -6px 0 0);
+  --glitch-slice2: inset(50% -6px 30% 0);
+  --glitch-slice3: inset(10% -6px 85% 0);
+  --glitch-slice4: inset(40% -6px 43% 0);
+  --glitch-slice5: inset(80% -6px 50% 0);
 }
 
 *::selection {
@@ -56,60 +62,134 @@ p {
   margin: 1rem 0;
 }
 
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 4px;
-  z-index: -1;
-  background: linear-gradient(135deg, transparent 5%, var(--tertiary-colour) 5%, var(--tertiary-colour) 95%, transparent 95%);;
-  width: 100%;
-  height: 100%;
+button {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 4px;
+    z-index: -1;
+    background: linear-gradient(135deg, transparent 5%, var(--tertiary-colour) 5%, var(--tertiary-colour) 95%, transparent 95%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &, &:after {
+    position: relative;
+    padding: .5rem 2rem;
+    background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
+    color: black;
+    font-weight: 600;
+    outline: transparent;
+    cursor: pointer;
+  }
+
+  &:after {
+    --slice0: var(--glitch-slice0);
+    --slice1: var(--glitch-slice1);
+    --slice2: var(--glitch-slice2);
+    --slice3: var(--glitch-slice3);
+    --slice4: var(--glitch-slice4);
+    --slice5: var(--glitch-slice5);
+
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, var(--secondary-colour) 5%, var(--primary-colour) 5%);
+    text-shadow: -3px -3px 0 var(--secondary-colour), 3px 3px 9px var(--secondary-colour);
+    clip-path: var(--slice0);
+  }
+
+  &:hover {
+    &:after {
+      animation: 1s glitch;
+      animation-timing-function: steps(2, end);
+    }
+  }
 }
 
-button, button::after {
-  position: relative;
-  padding: .5rem 2rem;
-  background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
-  color: black;
-  font-weight: 600;
-  outline: transparent;
-  cursor: pointer;
+.logo-glitch {
+  &:hover {
+    & + div {
+      & > svg {
+        --slice0: var(--glitch-slice4);
+        --slice1: var(--glitch-slice2);
+        --slice2: var(--glitch-slice3);
+        --slice3: var(--glitch-slice0);
+        --slice4: var(--glitch-slice1);
+        --slice5: var(--glitch-slice3);
+
+        animation: 1s glitch;
+        animation-timing-function: steps(2, end);
+      }
+    }
+  }
 }
 
-button::after {
-  --slice0: inset(50% 50% 50% 50%);
-  --slice1: inset(80% -6px 0 0);
-  --slice2: inset(50% -6px 30% 0);
-  --slice3: inset(10% -6px 85% 0);
-  --slice4: inset(40% -6px 43% 0);
-  --slice5: inset(80% -6px 50% 0);
-
+.divider {
   display: block;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, var(--secondary-colour) 5%, var(--primary-colour) 5%);
-  text-shadow: -3px -3px 0 var(--secondary-colour), 3px 3px 9px var(--secondary-colour);
-  clip-path: var(--slice0);
+  width: 100%;
+  height: 4px;
+  clip-path: polygon(5px 0%, 40px 0%, 45px 2px, calc(100% - 2px) 2px, 100% 4px, 0% 4px);
+  background: var(--primary-colour);
 }
 
-button:hover::after {
-  animation: 1s glitch;
-  animation-timing-function: steps(2, end);
-}
+ul.navigation {
+  & > li {
+    &:nth-child(1) > a:after {
+      animation-delay: .2s;
+    }
 
-.logo-glitch:hover + div > svg {
-  --slice0: inset(50% 50% 50% 50%);
-  --slice1: inset(80% -6px 0 0);
-  --slice2: inset(50% -6px 30% 0);
-  --slice3: inset(10% -6px 85% 0);
-  --slice4: inset(40% -6px 43% 0);
-  --slice5: inset(80% -6px 50% 0);
-}
+    &:nth-child(2) > a:after {
+      animation-delay: .4s;
 
-.logo-glitch:hover + div > svg {
-  animation: 1s glitch;
-  animation-timing-function: steps(2, end);
+      --slice0: var(--glitch-slice4);
+      --slice1: var(--glitch-slice2);
+      --slice2: var(--glitch-slice3);
+      --slice3: var(--glitch-slice0);
+      --slice4: var(--glitch-slice1);
+      --slice5: var(--glitch-slice3);
+    }
+
+    &:nth-child(3) > a:after {
+      animation-delay: .6s;
+      --slice0: var(--glitch-slice1);
+      --slice1: var(--glitch-slice0);
+      --slice2: var(--glitch-slice5);
+      --slice3: var(--glitch-slice3);
+      --slice4: var(--glitch-slice4);
+      --slice5: var(--glitch-slice2);
+    }
+
+    &:nth-child(4) > a:after {
+      animation-delay: .8s;
+    }
+  
+    & > a {
+      position: relative;
+      background: var(--primary-colour);
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-colour);
+        
+        --slice0: var(--glitch-slice0);
+        --slice1: var(--glitch-slice1);
+        --slice2: var(--glitch-slice2);
+        --slice3: var(--glitch-slice3);
+        --slice4: var(--glitch-slice4);
+        --slice5: var(--glitch-slice5);
+
+        animation: .75s glitch;
+        animation-timing-function: steps(2, end);
+      }
+    }
+  }
 }
 
 @keyframes glitch {
@@ -157,14 +237,6 @@ button:hover::after {
     clip-path: var(--slice1);
     transform: translate(0);
   }
-}
-
-.divider {
-  display: block;
-  width: 100%;
-  height: 4px;
-  clip-path: polygon(5px 0%, 40px 0%, 45px 2px, calc(100% - 2px) 2px, 100% 4px, 0% 4px);
-  background: var(--primary-colour);
 }
 
 /* 

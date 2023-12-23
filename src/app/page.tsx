@@ -32,19 +32,21 @@ function Home(props: HomeProps) {
           <h2 className={'text-[22pt] font-normal'}>RECENT POSTS</h2>
           <svg
             xmlns={'http://www.w3.org/2000/svg'}
-            fill={'none'}
-            viewBox={'0 0 24 24'}
-            strokeWidth={1.5}
-            stroke={'currentColor'}
-            dataslot={'icon'}
-            className={'w-6 h-6 stroke-primary relative bottom-[1px]'}
+            viewBox={'0 0 20 20'}
+            fill={'currentColor'}
+            className={'w-6 h-6 fill-primary'}
           >
             <path
-              strokeLinecap={'round'}
-              strokeLinejoin={'round'}
               d={
-                'M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25'
+                'M4.464 3.162A2 2 0 0 1 6.28 2h7.44a2 2 0 0 1 1.816 1.162l1.154 2.5c.067.145.115.291.145.438A3.508 3.508 0 0 0 16 6H4c-.288 0-.568.035-.835.1.03-.147.078-.293.145-.438l1.154-2.5Z'
               }
+            />
+            <path
+              fillRule={'evenodd'}
+              d={
+                'M2 9.5a2 2 0 0 1 2-2h12a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Zm13.24 0a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V9.5Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V9.5a.75.75 0 0 0-.75-.75h-.01ZM2 15a2 2 0 0 1 2-2h12a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Zm13.24 0a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z'
+              }
+              clipRule={'evenodd'}
             />
           </svg>
         </div>
@@ -127,19 +129,17 @@ function Home(props: HomeProps) {
           <h2 className={'text-[22pt] font-normal'}>FRONT-END SKILLS</h2>
           <svg
             xmlns={'http://www.w3.org/2000/svg'}
-            fill={'none'}
-            viewBox={'0 0 24 24'}
-            strokeWidth={1.5}
-            stroke={'currentColor'}
-            dataslot={'icon'}
-            className={'w-6 h-6 stroke-primary'}
+            viewBox={'0 0 20 20'}
+            fill={'currentColor'}
+            className={'w-6 h-6 fill-primary'}
           >
+            <path d={'M14 6H6v8h8V6Z'} />
             <path
-              strokeLinecap={'round'}
-              strokeLinejoin={'round'}
+              fillRule={'evenodd'}
               d={
-                'M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z'
+                'M9.25 3V1.75a.75.75 0 0 1 1.5 0V3h1.5V1.75a.75.75 0 0 1 1.5 0V3h.5A2.75 2.75 0 0 1 17 5.75v.5h1.25a.75.75 0 0 1 0 1.5H17v1.5h1.25a.75.75 0 0 1 0 1.5H17v1.5h1.25a.75.75 0 0 1 0 1.5H17v.5A2.75 2.75 0 0 1 14.25 17h-.5v1.25a.75.75 0 0 1-1.5 0V17h-1.5v1.25a.75.75 0 0 1-1.5 0V17h-1.5v1.25a.75.75 0 0 1-1.5 0V17h-.5A2.75 2.75 0 0 1 3 14.25v-.5H1.75a.75.75 0 0 1 0-1.5H3v-1.5H1.75a.75.75 0 0 1 0-1.5H3v-1.5H1.75a.75.75 0 0 1 0-1.5H3v-.5A2.75 2.75 0 0 1 5.75 3h.5V1.75a.75.75 0 0 1 1.5 0V3h1.5ZM4.5 5.75c0-.69.56-1.25 1.25-1.25h8.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25h-8.5c-.69 0-1.25-.56-1.25-1.25v-8.5Z'
               }
+              clipRule={'evenodd'}
             />
           </svg>
         </div>
