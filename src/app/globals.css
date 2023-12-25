@@ -238,15 +238,3 @@ ul.navigation {
     transform: translate(0);
   }
 }
-
-/* 
-.divider {
-  --full-height: 12px;
-  --thin-height: calc(var(--full-height) * 0.66);
-  --think-line-width: 100px;
-  display: block;
-  width: 100%;
-  height: var(--full-height);
-  clip-path: polygon(var(--full-height) 0%, var(--think-line-width) 0%, calc(var(--think-line-width) + var(--thin-height)) var(--thin-height), calc(100% - 2px) var(--thin-height), 100% var(--full-height), 0% var(--full-height));
-  background: var(--primary-colour);
-} */

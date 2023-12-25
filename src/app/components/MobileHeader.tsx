@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const defaultClasses = `absolute top-0 right-0 z-40 transition-all flex sm:hidden `;
+const defaultClasses = `fixed top-0 right-0 z-40 transition-all flex md:hidden `;
 const passiveClasses = `w-12 h-12 cursor-pointer`;
 const activeClasses = `w-screen h-screen px-10 pt-20 pb-6`;
 
-export function Header() {
+export function MobileHeader() {
   const [active, setActive] = useState<boolean>(false);
 
   return (
@@ -65,17 +65,22 @@ export function Header() {
           </Link>
         </li>
         <li>
-          <Link href={'/'} className={`after:content-['ABOUT']`}>
+          <Link href={'/about'} className={`after:content-['ABOUT']`}>
             ABOUT
           </Link>
         </li>
         <li>
-          <Link href={'/'} className={`after:content-['RESUME']`}>
+          <Link href={'/blog'} className={`after:content-['BLOG']`}>
+            BLOG
+          </Link>
+        </li>
+        <li>
+          <Link href={'/resume'} className={`after:content-['RESUME']`}>
             RESUME
           </Link>
         </li>
         <li>
-          <Link href={'/'} className={`after:content-['X']`}>
+          <Link href={'https://twitter.com/efebuyuran'} target={'_blank'}>
             X
           </Link>
         </li>

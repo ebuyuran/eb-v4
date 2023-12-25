@@ -1,0 +1,99 @@
+.skills_2742 {
+  position: relative;
+  border: thin solid var(--primary-colour);
+  background-color: rgba(0, 160, 160, .075);
+  padding: 1rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1rem; left: -8px;
+    display: block;
+    width: 8px;
+    height: 4rem;
+    background-color: var(--primary-colour);
+    clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 80%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -6px; right: 6px;
+    display: block;
+    width: 3rem;
+    height: 6px;
+    background-color: var(--primary-colour);
+    clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
+  }
+
+  & > ul {
+    --gap-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-weight: 600;
+    gap: var(--gap-size);
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+
+    & *::selection {
+      background-color: var(--secondary-colour);
+    }
+
+    & > li {
+      position: relative;
+      padding: 1rem;
+      border: thin solid rgba(0, 255, 255, .75);
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0;
+        display: block;
+        width: .6rem;
+        height: .6rem;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 255, 255, .75) 50%);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 6px;
+        display: block;
+        width: 2rem;
+        height: 4px;
+        background-color: rgba(0, 255, 255, .75);
+        clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
+      }
+
+      @media (min-width: 640px) {
+        width: calc(50% - (var(--gap-size) / 2));
+      }
+      
+      @media (min-width: 1024px) {
+        width: calc(33.3% - (var(--gap-size) / 1.5));
+      }
+
+      & > div {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        color: var(--secondary-colour);
+      }
+
+      ul {
+        margin-top: 0.25rem;
+        list-style: disc;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        color: white;
+
+        li {
+          margin-left: 1.25rem;
+          line-height: 1.25;
+        }
+      }
+    }
+  }
+}

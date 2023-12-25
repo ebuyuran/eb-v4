@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { Header } from './components/Header';
+import Link from 'next/link';
+
+import { MobileHeader } from './components/MobileHeader';
 import { rajdhani } from '@/assets/fonts';
 import './globals.css';
 
@@ -54,16 +56,44 @@ export default function RootLayout(props: RootLayoutProps) {
         className={rajdhani.className + ' ' + 'font-medium'}
         style={{ backgroundImage: 'url("./assets/img/bg.jpg")' }}
       >
-        <div className={'border-t-2 border-primary pt-24 relative'}>
+        <div className={'fixed top-0 w-full h-[2px] bg-primary'} />
+        <div className={`container relative pt-24`}>
           <div
-            className={'absolute z-10 top-9 left-9 logo-glitch cursor-pointer'}
+            className={`absolute z-10 top-9 left-9 logo-glitch cursor-pointer`}
           >
-            <Logo className={'fill-primary'} />
+            <Link href={'/'}>
+              <Logo className={'fill-primary'} />
+            </Link>
           </div>
           <div className={'absolute top-9 left-9'}>
             <Logo className={'fill-secondary'} />
           </div>
-          <Header />
+          <MobileHeader />
+          <div className={'fixed top-[2px] container'}>
+            <ul
+              className={
+                'hidden md:flex flex-row justify-end text-black font-semibold [&>li]:mx-3 [&>li]:bg-clipped-yellow-bl [&>li>a]:px-4'
+              }
+            >
+              <li>
+                <Link href={'/'}>HOME</Link>
+              </li>
+              <li>
+                <Link href={'/about'}>ABOUT</Link>
+              </li>
+              <li>
+                <Link href={'/blog'}>BLOG</Link>
+              </li>
+              <li>
+                <Link href={'/resume'}>RESUME</Link>
+              </li>
+              <li>
+                <Link href={'https://twitter.com/efebuyuran'} target={'_blank'}>
+                  X
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div>{props.children}</div>
         </div>
       </body>
