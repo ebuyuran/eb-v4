@@ -80,7 +80,11 @@ export function MobileNavigation() {
           </Link>
         </li>
         <li>
-          <Link href={'https://twitter.com/efebuyuran'} target={'_blank'}>
+          <Link
+            href={'https://twitter.com/efebuyuran'}
+            target={'_blank'}
+            className={`after:content-['X']`}
+          >
             X
           </Link>
         </li>

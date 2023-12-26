@@ -1,7 +1,7 @@
 import { unbounded } from '@/assets/fonts';
 
-import { Skills } from './components/Skills/Skills';
-import { RecentPosts } from './components/RecentPosts/RecentPosts';
+import { Skills } from '@/components/Skills/Skills';
+import { RecentPosts } from '@/components/RecentPosts/RecentPosts';
 
 function Home() {
   return (

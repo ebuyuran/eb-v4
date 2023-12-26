@@ -1,7 +1,6 @@
 .skills_2742 {
   position: relative;
   border: thin solid var(--primary-colour);
-  background-color: rgba(0, 160, 160, .075);
   padding: 1rem;
 
   &:before {
@@ -43,31 +42,6 @@
     }
 
     & > li {
-      position: relative;
-      padding: 1rem;
-      border: thin solid rgba(0, 255, 255, .75);
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0; right: 0;
-        display: block;
-        width: .6rem;
-        height: .6rem;
-        background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 255, 255, .75) 50%);
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -4px; left: 6px;
-        display: block;
-        width: 2rem;
-        height: 4px;
-        background-color: rgba(0, 255, 255, .75);
-        clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
-      }
-
       @media (min-width: 640px) {
         width: calc(50% - (var(--gap-size) / 2));
       }

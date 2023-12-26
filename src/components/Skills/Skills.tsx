@@ -12,7 +12,7 @@ export function Skills() {
       </div>
       <div className={'skills_2742'}>
         <ul>
-          <li>
+          <li className={'cyan-box'}>
             <div>CORE</div>
             <ul>
               <li>HTML</li>
@@ -21,7 +21,7 @@ export function Skills() {
               <li>ES6</li>
             </ul>
           </li>
-          <li>
+          <li className={'cyan-box'}>
             <div>CSS COMPILERS</div>
             <ul>
               <li>SASS</li>
@@ -30,7 +30,7 @@ export function Skills() {
               <li>TAILWINDCSS</li>
             </ul>
           </li>
-          <li>
+          <li className={'cyan-box'}>
             <div>JS TOOLS</div>
             <ul>
               <li>TYPESCRIPT</li>
@@ -39,7 +39,7 @@ export function Skills() {
               <li>NEXT.JS</li>
             </ul>
           </li>
-          <li>
+          <li className={'cyan-box'}>
             <div>UNIT TESTING</div>
             <ul>
               <li>JEST</li>
@@ -48,7 +48,7 @@ export function Skills() {
               <li>SINON</li>
             </ul>
           </li>
-          <li>
+          <li className={'cyan-box'}>
             <div>BUILD AUTOMATION</div>
             <ul>
               <li>NODE.JS</li>
@@ -57,7 +57,7 @@ export function Skills() {
               <li>WEBPACK</li>
             </ul>
           </li>
-          <li>
+          <li className={'cyan-box'}>
             <div>UI & UX</div>
             <ul>
               <li>PHOTOSHOP</li>

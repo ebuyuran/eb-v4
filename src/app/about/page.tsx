@@ -12,7 +12,9 @@ function About() {
             width={200}
             height={200}
             alt={'Profile Picture'}
-            className={'md:w-48 md:h-48'}
+            className={
+              'md:w-48 md:h-48 p-2 border-2 border-primary rounded-full'
+            }
           />
         </div>
         <div

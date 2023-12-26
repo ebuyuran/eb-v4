@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-
-import { Logo } from './components/Logo/Logo';
-import { Navigation } from './components/Navigation/Navigation';
+import { Logo } from '@/components/Logo/Logo';
+import { Providers } from '@/providers/Providers';
+import { Navigation } from '@/components/Navigation/Navigation';
 import { rajdhani } from '@/assets/fonts';
 import './globals.css';
 
@@ -27,14 +26,16 @@ export default function RootLayout(props: RootLayoutProps) {
     <html lang={'en'}>
       <body
         className={rajdhani.className + ' ' + 'font-medium'}
-        style={{ backgroundImage: 'url("./assets/img/bg.jpg")' }}
+        style={{ backgroundImage: 'url("/assets/img/bg.jpg")' }}
       >
-        <div className={'fixed top-0 w-full h-[2px] bg-primary'} />
-        <div className={`container relative pt-24`}>
-          <Logo />
-          <Navigation />
-          {props.children}
-        </div>
+        <Providers>
+          <div className={'fixed z-40 top-0 w-full h-[2px] bg-primary'} />
+          <div className={`container relative pt-24`}>
+            <Logo />
+            <Navigation />
+            {props.children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
