@@ -44,8 +44,8 @@ h1 {
 
 h2 {
   color: var(--primary-colour);
-  font-size: 27pt;
-  font-weight: 500;
+  font-size: 24pt;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -0.05em;
 }

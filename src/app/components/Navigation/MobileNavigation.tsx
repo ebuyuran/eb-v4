@@ -7,7 +7,7 @@ const defaultClasses = `fixed top-0 right-0 z-40 transition-all flex md:hidden `
 const passiveClasses = `w-12 h-12 cursor-pointer`;
 const activeClasses = `w-screen h-screen px-10 pt-20 pb-6`;
 
-export function MobileHeader() {
+export function MobileNavigation() {
   const [active, setActive] = useState<boolean>(false);
 
   return (
