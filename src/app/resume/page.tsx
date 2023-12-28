@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Screenshots } from '@/components/Screenshots';
-import { Skills } from '@/components/Skills/Skills';
+import { Skills } from '@/components/Skills';
 import { work } from '../data/work';
 import { education } from '../data/education';
 
