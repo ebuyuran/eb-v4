@@ -1,4 +1,8 @@
+import Link from 'next/link';
+import { getSortedPostsData } from '@/utils/blog';
 import './RecentPosts.css';
+
+const posts = getSortedPostsData();
 
 export function RecentPosts() {
   return (
@@ -27,89 +31,30 @@ export function RecentPosts() {
       </div>
       <div className={'divider scale-y-[-1] pb-2 mb-8'} />
       <ul className={`recent-posts_3205`}>
-        <li>
-          <div>
-            <svg
-              xmlns={'http://www.w3.org/2000/svg'}
-              viewBox={'0 0 20 20'}
-              fill={'currentColor'}
-            >
-              <path
-                fillRule={'evenodd'}
-                d={
-                  'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
-                }
-                clipRule={'evenodd'}
-              />
-            </svg>
-            <h3>ON THE WAY DOWN</h3>
-          </div>
-          <div>March 27, 2023</div>
-          <p>Software Development that Brings Everyone to the Table</p>
-        </li>
-        <li>
-          <div>
-            <svg
-              xmlns={'http://www.w3.org/2000/svg'}
-              viewBox={'0 0 20 20'}
-              fill={'currentColor'}
-            >
-              <path
-                fillRule={'evenodd'}
-                d={
-                  'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
-                }
-                clipRule={'evenodd'}
-              />
-            </svg>
-            <h3>HOW TO WRITE EMAIL THAT PEOPLE WILL READ</h3>
-          </div>
-          <div>September 23, 2014</div>
-          <p>
-            We are inundated with email. So how do you write an email that
-            clients and co-workers will read?
-          </p>
-        </li>
-        <li>
-          <div>
-            <svg
-              xmlns={'http://www.w3.org/2000/svg'}
-              viewBox={'0 0 20 20'}
-              fill={'currentColor'}
-            >
-              <path
-                fillRule={'evenodd'}
-                d={
-                  'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
-                }
-                clipRule={'evenodd'}
-              />
-            </svg>
-            <h3>SIMPLE IS NOT THE OPPOSITE OF COMPLEX</h3>
-          </div>
-          <div>May 22, 2014</div>
-          <p>Complex is Easy, Simple is Hard</p>
-        </li>
-        <li>
-          <div>
-            <svg
-              xmlns={'http://www.w3.org/2000/svg'}
-              viewBox={'0 0 20 20'}
-              fill={'currentColor'}
-            >
-              <path
-                fillRule={'evenodd'}
-                d={
-                  'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
-                }
-                clipRule={'evenodd'}
-              />
-            </svg>
-            <h3>Key and Lock</h3>
-          </div>
-          <div> March 14, 2014</div>
-          <p>Learn from interfaces that have endured.</p>
-        </li>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <div>
+              <svg
+                xmlns={'http://www.w3.org/2000/svg'}
+                viewBox={'0 0 20 20'}
+                fill={'currentColor'}
+              >
+                <path
+                  fillRule={'evenodd'}
+                  d={
+                    'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
+                  }
+                  clipRule={'evenodd'}
+                />
+              </svg>
+              <h3>
+                <Link href={`/blog/${post.id}`}>{post.title}</Link>
+              </h3>
+            </div>
+            <div>{post.date.toString()}</div>
+            <p>{post.summary}</p>
+          </li>
+        ))}
       </ul>
     </>
   );
