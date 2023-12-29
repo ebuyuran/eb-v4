@@ -1,0 +1,50 @@
+@keyframes glitch-interval {
+  0%, 89% {
+    clip-path: none;
+    transform: translate(0, 0);
+  }
+  90% {
+    clip-path: var(--slice1);
+    transform: translate(-20px, -10px);
+  }
+  91% {
+    clip-path: var(--slice3);
+    transform: translate(10px, 10px);
+  }
+  92% {
+    clip-path: var(--slice1);
+    transform: translate(-10px, 10px);
+  }
+  93% {
+    clip-path: var(--slice3);
+    transform: translate(0, 5px);
+  }
+  94% {
+    clip-path: var(--slice2);
+    transform: translate(-5px, 0);
+  }
+  95% {
+    clip-path: var(--slice3);
+    transform: translate(5px, 0);
+  }
+  96% {
+    clip-path: var(--slice4);
+    transform: translate(5px, 10px);
+  }
+  97% {
+    clip-path: var(--slice2);
+    transform: translate(-10px, 10px);
+  }
+  98% {
+    clip-path: var(--slice5);
+    transform: translate(20px, -10px);
+  }
+  99% {
+    clip-path: var(--slice1);
+    transform: translate(-10px, 0);
+  }
+  100% {
+    clip-path: none;
+    transform: translate(0, 0);
+  }
+}

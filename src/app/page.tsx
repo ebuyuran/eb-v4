@@ -2,6 +2,7 @@ import { unbounded } from '@/assets/fonts';
 
 import { Skills } from '@/components/Skills';
 import { RecentPosts } from '@/components/RecentPosts/RecentPosts';
+import { Button } from '@/components/UI/UI';
 
 function Home() {
   return (
@@ -24,7 +25,7 @@ function Home() {
         </p>
       </div>
       <div>
-        <button className={`after:content-['READ_MORE']`}>READ MORE</button>
+        <Button label={'READ MORE'} />
       </div>
       <div className={'mt-16'}>
         <RecentPosts />

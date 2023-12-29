@@ -1,4 +1,4 @@
-export const work = [
+export const work_data = [
   {
     name: 'RIOT GAMES',
     position: 'Software Engineer',

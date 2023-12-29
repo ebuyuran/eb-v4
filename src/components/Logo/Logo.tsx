@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { LogoSVG } from './LogoSVG';
+import './Logo.css';
 
 export function Logo() {
   return (

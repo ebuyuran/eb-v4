@@ -1,4 +1,4 @@
-import { skills } from '@/app/data/skills';
+import { skills_data } from '@/data/skills';
 
 export function Skills() {
   return (
@@ -14,7 +14,7 @@ export function Skills() {
         <ul
           className={`flex flex-col flex-wrap font-semibold gap-5 sm:flex-row`}
         >
-          {skills.map((skill) => (
+          {skills_data.map((skill) => (
             <li
               key={skill.headline}
               className={

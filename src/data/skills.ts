@@ -1,4 +1,4 @@
-export const skills = [
+export const skills_data = [
   {
     headline: 'CORE',
     subsets: ['HTML', 'CSS', 'JAVASCRIPT', 'ES6'],

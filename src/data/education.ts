@@ -1,4 +1,4 @@
-export const education = [
+export const education_data = [
   {
     name: 'ISTANBUL COMMERCE UNIVERSITY',
     field: 'Visual Communication',

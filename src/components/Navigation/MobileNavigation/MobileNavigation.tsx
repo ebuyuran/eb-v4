@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { navigation_data } from '@/data/navigation';
+import './MobileNavigation.css';
 
 const defaultClasses = `fixed top-0 right-0 z-40 transition-all flex md:hidden `;
 const passiveClasses = `w-12 h-12 cursor-pointer`;
@@ -55,39 +57,22 @@ export function MobileNavigation() {
       )}
       <ul
         className={
-          `navigation ${!active && 'hidden'}` +
+          `mobile-navigation ${!active && 'hidden'}` +
           ' text-black text-xl font-bold [&>li]:my-3'
         }
       >
-        <li>
-          <Link href={'/'} className={`after:content-['HOME']`}>
-            HOME
-          </Link>
-        </li>
-        <li>
-          <Link href={'/about'} className={`after:content-['ABOUT']`}>
-            ABOUT
-          </Link>
-        </li>
-        <li>
-          <Link href={'/blog'} className={`after:content-['BLOG']`}>
-            BLOG
-          </Link>
-        </li>
-        <li>
-          <Link href={'/resume'} className={`after:content-['RESUME']`}>
-            RESUME
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={'https://twitter.com/efebuyuran'}
-            target={'_blank'}
-            className={`after:content-['X']`}
-          >
-            X
-          </Link>
-        </li>
+        {navigation_data.map((nav) => (
+          <li key={nav.label}>
+            <Link
+              href={nav.link}
+              target={nav.newTab ? '_blank' : '_self'}
+              data-content={nav.label}
+              className={`after:content-[attr(data-content)]`}
+            >
+              {nav.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
