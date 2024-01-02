@@ -7,7 +7,7 @@ export function ContactForm() {
   const context = useContext(ModalContext);
 
   return (
-    <div className={'flex flex-col items-end'}>
+    <div className={'glitch flex flex-col items-end'}>
       <div
         className={`relative -right-4 p-4 cursor-pointer`}
         onClick={() => context.setModalState(false)}

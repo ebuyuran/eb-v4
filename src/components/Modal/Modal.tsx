@@ -13,13 +13,11 @@ export function Modal() {
       case 'image':
         return (
           <div
+            onClick={() => context.setModalState(false)}
             className={`fixed z-50 flex justify-center items-center w-screen h-screen bg-black/80 p-6`}
           >
             <div className={'relative w-4/5 max-w-6xl'}>
-              <div
-                onClick={() => context.setModalState(false)}
-                className={'absolute -top-10 right-0 cursor-pointer'}
-              >
+              <div className={'absolute -top-10 right-0 cursor-pointer'}>
                 <svg
                   xmlns={'http://www.w3.org/2000/svg'}
                   fill={'none'}
@@ -42,6 +40,15 @@ export function Modal() {
                 alt={'Modal Image'}
                 className={
                   'w-full aspect-auto border border-primary p-2 bg-black'
+                }
+              />
+              <Image
+                src={context.modalState.payload}
+                width={200}
+                height={200}
+                alt={'Modal Image'}
+                className={
+                  'glitch w-full aspect-auto border border-primary p-2 bg-black absolute top-0 left-0'
                 }
               />
             </div>

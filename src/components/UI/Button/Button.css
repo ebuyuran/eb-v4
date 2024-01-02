@@ -45,16 +45,4 @@
       animation-timing-function: steps(5, end);
     }
   }
-
-  &.red {
-    &:before {
-      
-    background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
-    }
-
-    &, &:after {
-      color: var(--primary-colour);
-      background: linear-gradient(135deg, transparent 5%, var(--tertiary-colour) 5%, var(--tertiary-colour) 95%, transparent 95%);
-    } 
-  }
 }

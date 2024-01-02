@@ -133,3 +133,15 @@ p {
 .clip-16 {
   --clip-size: 16px;
 }
+
+.glitch {
+  --slice0: var(--glitch-slice5);
+  --slice1: var(--glitch-slice1);
+  --slice2: var(--glitch-slice4);
+  --slice3: var(--glitch-slice3);
+  --slice4: var(--glitch-slice2);
+  --slice5: var(--glitch-slice1);
+
+  animation: .4s glitch;
+  animation-timing-function: steps(5, end);
+}

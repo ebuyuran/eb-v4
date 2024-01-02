@@ -23,7 +23,7 @@ export function Work() {
             </ul>
             <div>
               <ul
-                className={`cyan-box flex flex-col flex-wrap list-disc mt-9 p-4 [&>li]:ml-4 md:flex-row md:list-none lg:w-[12rem] lg:mt-0 lg:list-disc lg:flex-col`}
+                className={`cyan-box tr-cyan-tri-before bl-cyan-dec-after flex flex-col flex-wrap list-disc mt-9 p-4 [&>li]:ml-4 md:flex-row md:list-none lg:w-[12rem] lg:mt-0 lg:list-disc lg:flex-col`}
               >
                 {corp.skills.map((skill, i) => (
                   <li key={i}>{skill}</li>

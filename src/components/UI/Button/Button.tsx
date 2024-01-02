@@ -8,17 +8,15 @@ interface ButtonProps {
     url: string;
     target?: '_blank';
   };
-  theme?: 'red';
 }
 
 export function Button(props: ButtonProps) {
-  const theme = props.theme ? props.theme : '';
   const button_element = (
     <button
       data-content={props.label}
       id={props.id}
       name={props.id}
-      className={`button ${theme} after:content-[attr(data-content)]`}
+      className={`button after:content-[attr(data-content)]`}
     >
       {props.label}
     </button>

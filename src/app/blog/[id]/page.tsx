@@ -1,12 +1,10 @@
-import { getPostData, getSortedPostsData } from '@/utils/blog';
+import { posts } from '../../../../posts/posts';
 
 interface BlogPostProps {
   params: {
     id: string;
   };
 }
-
-const posts = getSortedPostsData();
 
 export function generateStaticParams() {
   return posts.map((post) => {
@@ -16,14 +14,19 @@ export function generateStaticParams() {
   });
 }
 
-async function BlogPost(props: BlogPostProps) {
-  const post = await getPostData(props.params.id);
-  return (
-    <div className={'my-16'}>
-      <div>{post.id}</div>
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-    </div>
-  );
+function BlogPost(props: BlogPostProps) {
+  const post = posts.find((post) => post.id === props.params.id);
+
+  if (post) {
+    return (
+      <div className={'my-16'}>
+        <div>{post.id}</div>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </div>
+    );
+  } else {
+    return <div className={'my-16'}>Page not found!</div>;
+  }
 }
 
 export default BlogPost;

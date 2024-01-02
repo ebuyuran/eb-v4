@@ -1,8 +1,6 @@
+import { posts } from '../../../posts/posts';
 import Link from 'next/link';
-import { getSortedPostsData } from '@/utils/blog';
 import './RecentPosts.css';
-
-const posts = getSortedPostsData();
 
 export function RecentPosts() {
   return (
