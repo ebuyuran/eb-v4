@@ -1,8 +1,36 @@
-import { posts } from '../../../posts/posts';
+import { allPosts, posts } from '../../../posts/_posts';
 import Link from 'next/link';
 import './RecentPosts.css';
 
 export function RecentPosts() {
+  const postList = posts.slice(0, 4).map((post) => {
+    const postDetail = allPosts[post];
+    return (
+      <li key={post}>
+        <div>
+          <svg
+            xmlns={'http://www.w3.org/2000/svg'}
+            viewBox={'0 0 20 20'}
+            fill={'currentColor'}
+          >
+            <path
+              fillRule={'evenodd'}
+              d={
+                'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
+              }
+              clipRule={'evenodd'}
+            />
+          </svg>
+          <h3>
+            <Link href={`/blog/${postDetail.id}`}>{postDetail.title}</Link>
+          </h3>
+        </div>
+        <div>{postDetail.date.toString()}</div>
+        <p>{postDetail.summary}</p>
+      </li>
+    );
+  });
+
   return (
     <>
       <div className={'flex justify-between items-center'}>
@@ -28,32 +56,7 @@ export function RecentPosts() {
         </svg>
       </div>
       <div className={'divider scale-y-[-1] pb-2 mb-8'} />
-      <ul className={`recent-posts_3205`}>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <div>
-              <svg
-                xmlns={'http://www.w3.org/2000/svg'}
-                viewBox={'0 0 20 20'}
-                fill={'currentColor'}
-              >
-                <path
-                  fillRule={'evenodd'}
-                  d={
-                    'M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.378 2H4.5Zm2.25 8.5a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm0 3a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z'
-                  }
-                  clipRule={'evenodd'}
-                />
-              </svg>
-              <h3>
-                <Link href={`/blog/${post.id}`}>{post.title}</Link>
-              </h3>
-            </div>
-            <div>{post.date.toString()}</div>
-            <p>{post.summary}</p>
-          </li>
-        ))}
-      </ul>
+      <ul className={`recent-posts_3205`}>{postList}</ul>
     </>
   );
 }

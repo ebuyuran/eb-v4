@@ -1,4 +1,4 @@
-import { posts } from '../../../../posts/posts';
+import { allPosts, posts } from '../../../../posts/_posts';
 
 interface BlogPostProps {
   params: {
@@ -7,20 +7,19 @@ interface BlogPostProps {
 }
 
 export function generateStaticParams() {
-  return posts.map((post) => {
+  return posts.map((postID) => {
     return {
-      id: post.id,
+      id: postID,
     };
   });
 }
 
 function BlogPost(props: BlogPostProps) {
-  const post = posts.find((post) => post.id === props.params.id);
+  const post = allPosts[props.params.id];
 
   if (post) {
     return (
       <div className={'my-16'}>
-        <div>{post.id}</div>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     );
