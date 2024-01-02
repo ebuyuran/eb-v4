@@ -2,18 +2,23 @@ import Link from 'next/link';
 import './Button.css';
 
 interface ButtonProps {
+  id?: string;
   label: string;
   link?: {
     url: string;
     target?: '_blank';
   };
+  theme?: 'red';
 }
 
 export function Button(props: ButtonProps) {
+  const theme = props.theme ? props.theme : '';
   const button_element = (
     <button
       data-content={props.label}
-      className={`button after:content-[attr(data-content)]`}
+      id={props.id}
+      name={props.id}
+      className={`button ${theme} after:content-[attr(data-content)]`}
     >
       {props.label}
     </button>

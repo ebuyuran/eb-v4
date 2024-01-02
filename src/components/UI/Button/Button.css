@@ -12,7 +12,7 @@
 
   &, &:after {
     position: relative;
-    padding: .5rem 2rem;
+    padding: .4rem 2rem;
     background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
     color: black;
     font-weight: 600;
@@ -44,5 +44,17 @@
       animation: 1s glitch;
       animation-timing-function: steps(5, end);
     }
+  }
+
+  &.red {
+    &:before {
+      
+    background: linear-gradient(135deg, transparent 5%, var(--primary-colour) 5%, var(--primary-colour) 95%, transparent 95%);
+    }
+
+    &, &:after {
+      color: var(--primary-colour);
+      background: linear-gradient(135deg, transparent 5%, var(--tertiary-colour) 5%, var(--tertiary-colour) 95%, transparent 95%);
+    } 
   }
 }

@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { navigation_data } from '@/data/navigation';
+import { Menu } from '../Menu';
 import './MobileNavigation.css';
 
 const defaultClasses = `fixed top-0 right-0 z-40 transition-all flex md:hidden `;
@@ -61,18 +60,7 @@ export function MobileNavigation() {
           ' text-black text-xl font-bold [&>li]:my-3'
         }
       >
-        {navigation_data.map((nav) => (
-          <li key={nav.label}>
-            <Link
-              href={nav.link}
-              target={nav.newTab ? '_blank' : '_self'}
-              data-content={nav.label}
-              className={`after:content-[attr(data-content)]`}
-            >
-              {nav.label}
-            </Link>
-          </li>
-        ))}
+        <Menu className={'after:content-[attr(data-content)]'} />
       </ul>
     </div>
   );

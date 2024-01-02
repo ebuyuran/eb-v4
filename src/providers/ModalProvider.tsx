@@ -1,18 +1,18 @@
 'use client';
 
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
-import { Modal } from '@/components/Modal';
+import { Modal } from '@/components/Modal/Modal';
 
 interface ModalProviderProps {
   children: React.ReactNode;
 }
 
-interface ImageOption {
-  type: 'image';
-  url: string;
-}
+type ModalTypes = 'image' | 'contact-form';
 
-type ModalOptions = ImageOption;
+type ModalOptions = {
+  type: ModalTypes;
+  payload?: any;
+};
 
 export type ModalStates = false | ModalOptions;
 
@@ -32,7 +32,7 @@ export function ModalProvider(props: ModalProviderProps) {
     <ModalContext.Provider
       value={{ modalState: state, setModalState: setState }}
     >
-      {state && <Modal payload={state} />}
+      {state && <Modal />}
       {props.children}
     </ModalContext.Provider>
   );

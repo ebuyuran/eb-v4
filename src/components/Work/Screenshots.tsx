@@ -13,7 +13,9 @@ export function Screenshots(props: ScreenshotsProps) {
 
   return props.list.map((screenshot, i) => (
     <li
-      onClick={() => context.setModalState({ type: 'image', url: screenshot })}
+      onClick={() =>
+        context.setModalState({ type: 'image', payload: screenshot })
+      }
       className={
         'sm:w-[calc(50%-.5rem)] md:w-[calc(33.3%-0.66rem)] p-2 border border-primary cursor-pointer'
       }

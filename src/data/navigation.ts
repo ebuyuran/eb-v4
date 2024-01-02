@@ -1,27 +1,40 @@
-export const navigation_data = [
+interface NavigationData {
+  action?: 'contact-form';
+  label: string;
+  link: string;
+  newTab: boolean;
+}
+
+export const navigation_data: NavigationData[] = [
   {
-    link: '/',
     label: 'HOME',
+    link: '/',
     newTab: false,
   },
   {
-    link: '/about',
     label: 'ABOUT',
+    link: '/about',
     newTab: false,
   },
   {
-    link: '/blog',
     label: 'BLOG',
+    link: '/blog',
     newTab: false,
   },
   {
-    link: '/resume',
     label: 'RESUME',
+    link: '/resume',
     newTab: false,
   },
   {
-    link: 'https://twitter.com/efebuyuran',
+    action: 'contact-form',
+    label: 'CONTACT',
+    link: '',
+    newTab: false,
+  },
+  {
     label: 'X',
+    link: 'https://twitter.com/efebuyuran',
     newTab: true,
   },
 ];

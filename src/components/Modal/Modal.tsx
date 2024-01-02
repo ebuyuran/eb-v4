@@ -2,14 +2,10 @@
 
 import { useContext } from 'react';
 import Image from 'next/image';
-import { ModalStates } from '@/providers/ModalProvider';
 import { ModalContext } from '@/providers/ModalProvider';
+import { ContactForm } from './ContactForm';
 
-interface ModalProps {
-  payload: ModalStates;
-}
-
-export function Modal(props: ModalProps) {
+export function Modal() {
   const context = useContext(ModalContext);
 
   if (context.modalState) {
@@ -17,11 +13,13 @@ export function Modal(props: ModalProps) {
       case 'image':
         return (
           <div
-            onClick={() => context.setModalState(false)}
             className={`fixed z-50 flex justify-center items-center w-screen h-screen bg-black/80 p-6`}
           >
             <div className={'relative w-4/5 max-w-6xl'}>
-              <div className={'absolute -top-10 right-0'}>
+              <div
+                onClick={() => context.setModalState(false)}
+                className={'absolute -top-10 right-0 cursor-pointer'}
+              >
                 <svg
                   xmlns={'http://www.w3.org/2000/svg'}
                   fill={'none'}
@@ -38,7 +36,7 @@ export function Modal(props: ModalProps) {
                 </svg>
               </div>
               <Image
-                src={context.modalState.url}
+                src={context.modalState.payload}
                 width={200}
                 height={200}
                 alt={'Modal Image'}
@@ -47,6 +45,15 @@ export function Modal(props: ModalProps) {
                 }
               />
             </div>
+          </div>
+        );
+
+      case 'contact-form':
+        return (
+          <div
+            className={`fixed z-50 flex justify-center items-center w-screen h-screen bg-black/80 p-6`}
+          >
+            <ContactForm />
           </div>
         );
     }

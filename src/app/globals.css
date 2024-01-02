@@ -124,3 +124,12 @@ p {
   @apply bg-secondary/80;
   clip-path: polygon(0% 0%, var(--diagonal-distance) var(--decoration-height), calc(var(--decoration-width) - var(--diagonal-distance)) var(--decoration-height), var(--decoration-width) 0%);
 }
+
+.clipped-tl-br {
+  --clip-size: 12px;
+  clip-path: polygon(0 var(--clip-size), var(--clip-size) 0, 100% 0, 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%, 0 100%, 0 calc(100% - var(--clip-size)));
+}
+
+.clip-16 {
+  --clip-size: 16px;
+}
