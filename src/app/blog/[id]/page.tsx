@@ -1,13 +1,13 @@
-import { allPosts, posts } from '../../../../posts/_posts';
+import { allPosts, postIDs, Posts } from '../../../../posts/_posts';
 
 interface BlogPostProps {
   params: {
-    id: string;
+    id: Posts;
   };
 }
 
 export function generateStaticParams() {
-  return posts.map((postID) => {
+  return postIDs.map((postID) => {
     return {
       id: postID,
     };

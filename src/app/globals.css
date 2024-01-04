@@ -1,6 +1,3 @@
-@import '../styles/animations/glitch.css';
-@import '../styles/animations/glitch-interval.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,25 +62,37 @@ p {
   margin: 1rem 0;
 }
 
-.divider-fullwidth {
+.divider {
+  --divider-width: 100%;
+  --element-width: 50px;
+  --element-height: 6px;
+  --diagonal-distance: 6px;
+  --distance: 1rem;
+
   position: relative;
-  width: 100%;
+  width: var(--divider-width);
   height: 1px;
-  background: var(--primary-colour);
+  border-top: thin solid var(--primary-colour);
 
   &:before {
-    --element-width: 50px;
-    --element-height: 6px;
-    --diagonal-distance: 6px;
     content: '';
     position: absolute;
     top: 0;
-    right: 1.5rem;
+    right: var(--distance);
     display: block;
     width: var(--element-width);
     height: var(--element-height);
     background: var(--primary-colour);
     clip-path: polygon(0 0, var(--element-width) 0, calc(var(--element-width) - var(--diagonal-distance)) var(--element-height), var(--diagonal-distance) var(--element-height));
+  }
+
+  &.dv-w-200 {
+    --divider-width: 200px;
+  }
+
+  &.dv-left:before {
+    right: auto;
+    left: var(--distance);
   }
 }
 
@@ -134,7 +143,11 @@ p {
   --clip-size: 16px;
 }
 
-.glitch {
+.invisibility-clip {
+  clip-path: inset(50% 50% 50% 50%);
+}
+
+/* .glitch {
   --slice0: var(--glitch-slice5);
   --slice1: var(--glitch-slice1);
   --slice2: var(--glitch-slice4);
@@ -144,4 +157,4 @@ p {
 
   animation: .4s glitch;
   animation-timing-function: steps(5, end);
-}
+} */

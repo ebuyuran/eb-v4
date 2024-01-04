@@ -1,4 +1,4 @@
-interface NavigationData {
+export interface NavigationData {
   action?: 'contact-form';
   label: string;
   link: string;

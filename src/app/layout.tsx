@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Logo } from '@/components/Logo/Logo';
+import { Logo } from '@/components/Logo';
 import { Providers } from '@/providers/Providers';
 import { Navigation } from '@/components/Navigation/Navigation';
 import { rajdhani } from '@/assets/fonts';

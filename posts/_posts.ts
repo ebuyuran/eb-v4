@@ -9,18 +9,18 @@ export interface Post {
   title: string;
 }
 
-interface AllPosts {
-  [key: string]: Post;
-}
-
-const post = {
-  PRERENDERING: 'pre-rendering',
-  SSGSSR: 'ssg-ssr',
+type AllPosts = {
+  [key in Posts]: Post;
 };
 
-export const posts: string[] = [post.PRERENDERING, post.SSGSSR];
+export enum Posts {
+  PRERENDERING = 'pre-rendering',
+  SSGSSR = 'ssg-ssr',
+}
+
+export const postIDs: Posts[] = [Posts.PRERENDERING, Posts.SSGSSR];
 
 export const allPosts: AllPosts = {
-  [post.PRERENDERING]: PRERENDERING(post.PRERENDERING),
-  [post.SSGSSR]: SSGSSR(post.SSGSSR),
+  [Posts.PRERENDERING]: PRERENDERING(Posts.PRERENDERING),
+  [Posts.SSGSSR]: SSGSSR(Posts.SSGSSR),
 };

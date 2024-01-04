@@ -1,6 +1,6 @@
 import { unbounded } from '@/assets/fonts';
 import { Skills } from '@/components/Skills';
-import { RecentPosts } from '@/components/RecentPosts/RecentPosts';
+import { RecentPosts } from '@/components/RecentPosts';
 import { Button } from '@/components/UI/UI';
 
 function Home() {

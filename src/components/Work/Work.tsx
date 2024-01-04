@@ -34,9 +34,7 @@ export function Work() {
           <ul className={'flex flex-wrap justify-center mt-12 gap-4 '}>
             <Screenshots list={corp.screenshots} />
           </ul>
-          {work_data.length !== i + 1 && (
-            <div className={'divider-fullwidth mt-6'} />
-          )}
+          {work_data.length !== i + 1 && <div className={'divider mt-6'} />}
         </li>
       ))}
     </ul>

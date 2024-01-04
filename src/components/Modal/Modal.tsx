@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import { ModalContext } from '@/providers/ModalProvider';
+import { SVG } from '../UI/UI';
 import { ContactForm } from './ContactForm';
 
 export function Modal() {
@@ -14,24 +15,11 @@ export function Modal() {
         return (
           <div
             onClick={() => context.setModalState(false)}
-            className={`fixed z-50 flex justify-center items-center w-screen h-screen bg-black/80 p-6`}
+            className={`fixed z-50 flex justify-center items-center w-screen h-screen bg-black/80 md:p-6`}
           >
-            <div className={'relative w-4/5 max-w-6xl'}>
+            <div className={'relative w-[calc(100%-10px)] max-w-6xl md:w-4/5'}>
               <div className={'absolute -top-10 right-0 cursor-pointer'}>
-                <svg
-                  xmlns={'http://www.w3.org/2000/svg'}
-                  fill={'none'}
-                  viewBox={'0 0 24 24'}
-                  strokeWidth={1.5}
-                  stroke={'currentColor'}
-                  className={'w-8 h-8 stroke-primary'}
-                >
-                  <path
-                    strokeLinecap={'round'}
-                    strokeLinejoin={'round'}
-                    d={'M6 18 18 6M6 6l12 12'}
-                  />
-                </svg>
+                <SVG model={'X'} className={'w-8 h-8 stroke-primary'} />
               </div>
               <Image
                 src={context.modalState.payload}
@@ -48,7 +36,7 @@ export function Modal() {
                 height={200}
                 alt={'Modal Image'}
                 className={
-                  'glitch w-full aspect-auto border border-primary p-2 bg-black absolute top-0 left-0'
+                  'animate-glitch_short w-full aspect-auto border border-primary p-2 bg-black absolute top-0 left-0'
                 }
               />
             </div>
