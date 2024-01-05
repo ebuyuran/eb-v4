@@ -1,6 +1,110 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  .clipped-tl-br {
+    --clip-size: 12px;
+    clip-path: polygon(0 var(--clip-size), var(--clip-size) 0, 100% 0, 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%, 0 100%, 0 calc(100% - var(--clip-size)));
+  }
+
+  .clipped-br {
+    --clip-size: 12px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, var(--clip-size) 100%, 0 calc(100% - var(--clip-size)));
+  }
+
+  .clipped-tr {
+    --clip-size: 12px;
+    clip-path: polygon(0 0, calc(100% - var(--clip-size)) 0, 100% var(--clip-size), 100% 100%, 0 100%);
+  }
+
+  .clip-16px {
+    --clip-size: 16px;
+  }
+
+  .clip-32px {
+    --clip-size: 32px;
+  }
+
+  .invisibility-clip {
+    clip-path: inset(50% 50% 50% 50%);
+  }
+
+  .cyan-box {
+    position: relative;
+    padding: 1rem;
+    color: var(--secondary-colour);
+    border: thin solid rgba(0, 255, 255, .75);
+    background: rgba(0, 255, 255, .075);
+
+    & *::selection {
+      background: var(--secondary-colour);
+    }
+  }
+
+  .tr-cyan-tri-before:before {
+    --decoration-size: .6rem;
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    display: block;
+    width: var(--decoration-size);
+    height: var(--decoration-size);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 255, 255, .75) 50%);
+  }
+
+  .bl-cyan-dec-after:after {
+    --decoration-width: 36px;
+    --decoration-height: 5px;
+    --diagonal-distance: 5px;
+    content: '';
+    position: absolute;
+    bottom: calc(var(--decoration-height) * -1);
+    left: 6px;
+    display: block;
+    width: var(--decoration-width);
+    height: var(--decoration-height);
+    @apply bg-secondary/80;
+    clip-path: polygon(0% 0%, var(--diagonal-distance) var(--decoration-height), calc(var(--decoration-width) - var(--diagonal-distance)) var(--decoration-height), var(--decoration-width) 0%);
+  }
+  
+  .divider {
+    --divider-width: 100%;
+    --element-width: 50px;
+    --element-height: 6px;
+    --diagonal-distance: 6px;
+    --distance: 1rem;
+
+    position: relative;
+    width: var(--divider-width);
+    height: 1px;
+    border-bottom: thin solid var(--primary-colour);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: var(--distance);
+      display: block;
+      width: var(--element-width);
+      height: var(--element-height);
+      background: var(--primary-colour);
+      clip-path: polygon(0 0, var(--element-width) 0, calc(var(--element-width) - var(--diagonal-distance)) var(--element-height), var(--diagonal-distance) var(--element-height));
+    }
+
+    &.dv-w-200 {
+      --divider-width: 200px;
+    }
+
+    &.dv-left:before {
+      right: auto;
+      left: var(--distance);
+    }
+
+    &.dv-inverted {
+      transform: scaleX(-1)
+    }
+  }
+}
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -9,13 +113,6 @@
   --primary-colour: #ffe500;
   --secondary-colour: #00ffff;
   --tertiary-colour: #ff003b;
-
-  --glitch-slice0: inset(50% 50% 50% 50%);
-  --glitch-slice1: inset(80% -6px 0 0);
-  --glitch-slice2: inset(50% -6px 30% 0);
-  --glitch-slice3: inset(10% -6px 85% 0);
-  --glitch-slice4: inset(40% -6px 43% 0);
-  --glitch-slice5: inset(80% -6px 50% 0);
 }
 
 *::selection {
@@ -58,103 +155,10 @@ h3 {
   letter-spacing: -0.05em;
 }
 
-p {
-  margin: 1rem 0;
-}
-
-.divider {
-  --divider-width: 100%;
-  --element-width: 50px;
-  --element-height: 6px;
-  --diagonal-distance: 6px;
-  --distance: 1rem;
-
-  position: relative;
-  width: var(--divider-width);
-  height: 1px;
-  border-top: thin solid var(--primary-colour);
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: var(--distance);
-    display: block;
-    width: var(--element-width);
-    height: var(--element-height);
-    background: var(--primary-colour);
-    clip-path: polygon(0 0, var(--element-width) 0, calc(var(--element-width) - var(--diagonal-distance)) var(--element-height), var(--diagonal-distance) var(--element-height));
-  }
-
-  &.dv-w-200 {
-    --divider-width: 200px;
-  }
-
-  &.dv-left:before {
-    right: auto;
-    left: var(--distance);
+.blog {
+  span {
+    color: black;
+    background-color: var(--primary-colour);
+    padding: 0 4px;
   }
 }
-
-.cyan-box {
-  position: relative;
-  padding: 1rem;
-  color: var(--secondary-colour);
-  border: thin solid rgba(0, 255, 255, .75);
-  background: rgba(0, 255, 255, .075);
-
-  & *::selection {
-    background: var(--secondary-colour);
-  }
-}
-
-.tr-cyan-tri-before:before {
-  --decoration-size: .6rem;
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  display: block;
-  width: var(--decoration-size);
-  height: var(--decoration-size);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 255, 255, .75) 50%);
-}
-
-.bl-cyan-dec-after:after {
-  --decoration-width: 36px;
-  --decoration-height: 5px;
-  --diagonal-distance: 5px;
-  content: '';
-  position: absolute;
-  bottom: calc(var(--decoration-height) * -1);
-  left: 6px;
-  display: block;
-  width: var(--decoration-width);
-  height: var(--decoration-height);
-  @apply bg-secondary/80;
-  clip-path: polygon(0% 0%, var(--diagonal-distance) var(--decoration-height), calc(var(--decoration-width) - var(--diagonal-distance)) var(--decoration-height), var(--decoration-width) 0%);
-}
-
-.clipped-tl-br {
-  --clip-size: 12px;
-  clip-path: polygon(0 var(--clip-size), var(--clip-size) 0, 100% 0, 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%, 0 100%, 0 calc(100% - var(--clip-size)));
-}
-
-.clip-16 {
-  --clip-size: 16px;
-}
-
-.invisibility-clip {
-  clip-path: inset(50% 50% 50% 50%);
-}
-
-/* .glitch {
-  --slice0: var(--glitch-slice5);
-  --slice1: var(--glitch-slice1);
-  --slice2: var(--glitch-slice4);
-  --slice3: var(--glitch-slice3);
-  --slice4: var(--glitch-slice2);
-  --slice5: var(--glitch-slice1);
-
-  animation: .4s glitch;
-  animation-timing-function: steps(5, end);
-} */

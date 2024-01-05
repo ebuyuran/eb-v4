@@ -32,11 +32,11 @@ export function Menu(props: MenuProps) {
       <li
         key={nav.label}
         className={
-          'cursor-pointer md:relative md:mx-3 md:bg-clipped-yellow-bl md:before:block md:before:bg-tertiary md:before:absolute md:before:-z-10 md:before:top-0 md:before:-right-1 md:before:w-3/4 md:before:h-[calc(100%+3px)]'
+          'cursor-pointer md:relative md:mx-3 md:before:block md:before:bg-tertiary md:before:absolute md:before:-z-10 md:before:top-0 md:before:-right-1 md:before:w-3/4 md:before:h-[calc(100%+3px)]'
         }
         onClick={clickHandler.bind(null, nav)}
       >
-        <div className={'relative'}>
+        <div className={'relative md:bg-primary md:clipped-br'}>
           <div
             className={
               'bg-primary py-1 px-4 animate-glitch_nav md:py-0 md:animate-none md:bg-transparent'

@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
-import { Modal } from '@/components/Modal/Modal';
+import { Modal } from '@/components/Modals/Modal';
 
 interface ModalProviderProps {
   children: React.ReactNode;

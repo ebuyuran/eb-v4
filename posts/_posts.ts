@@ -1,10 +1,14 @@
 import PRERENDERING from './pre-rendering';
 import SSGSSR from './ssg-ssr';
 
+type PostCategory = 'CSS' | 'API' | 'Animation';
+
 export interface Post {
+  categories: PostCategory[];
   content: string;
   date: Date;
   id: string;
+  short_summary: string;
   summary: string;
   title: string;
 }

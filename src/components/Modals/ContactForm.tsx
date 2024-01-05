@@ -9,14 +9,14 @@ export function ContactForm() {
   return (
     <div className={'flex flex-col items-end animate-glitch'}>
       <div
-        className={`relative -right-4 p-4 cursor-pointer`}
+        className={`bg-primary clipped-tr relative right-0 p-2 cursor-pointer`}
         onClick={() => context.setModalState(false)}
       >
-        <SVG model={'X'} className={'w-8 h-8 stroke-primary'} />
+        <SVG model={'X'} className={'w-8 h-5 stroke-black'} />
       </div>
-      <div className={'relative p-6 bg-primary clipped-tl-br clip-16'}>
+      <div className={'relative p-3 bg-primary clipped-tl-br clip-16px'}>
         <div
-          className={`clipped-tl-br clip-16 absolute -z-10 top-[2px] left-[2px] bg-black w-[calc(100%-4px)] h-[calc(100%-4px)]`}
+          className={`clipped-tl-br clip-16px absolute -z-10 top-[1px] left-[1px] bg-black w-[calc(100%-2px)] h-[calc(100%-2px)]`}
         />
         <form
           action={'https://submit-form.com/ZP7x4NwS5'}

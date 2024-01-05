@@ -1,30 +1,51 @@
+import Link from 'next/link';
 import { postIDs, allPosts } from '../../../posts/_posts';
+import { SVG } from '@/components/UI/UI';
 
 function Blog() {
   return (
-    <div className={'w-3/4 mt-16 mb-8'}>
-      <h1>BLOG</h1>
-      {/* <div className={'divider dv-w-200 dv-left mt-2'} /> */}
+    <div className={' mt-16 mb-8 p-9'}>
       <ul>
         {postIDs.map((postID) => {
           const post = allPosts[postID];
           return (
-            <li
-              key={postID}
-              className={`relative w-full my-12 p-4 bg-tertiary/5 border border-tertiary before:block before:absolute before:top-0 before:right-0 before:w-1 before:h-1/2 before:bg-tertiary after:block after:absolute after:top-0 after:right-0 after:w-3/4 after:h-1 after:bg-tertiary`}
-            >
-              <h2 className={'w-3/4 text-2xl'}>{post.title.toUpperCase()}</h2>
-              <div
-                className={`bg-tertiary text-black inline-block px-2 my-1 leading-5`}
-              >
-                {post.date.toDateString()}
+            <li key={postID} className={`blog relative w-full mb-16`}>
+              <div className={'pl-2 pr-3 md:pr-20'}>
+                <Link href={`/blog/${postID}`}>
+                  <h2 className={'md:w-3/4 text-3xl'}>
+                    {post.title.toUpperCase()}
+                  </h2>
+                </Link>
+                <div
+                  className={`bg-tertiary text-black font-semibold inline-block px-2 my-1 leading-5`}
+                >
+                  {post.date.toDateString()}
+                </div>
+                <div
+                  className={`text-lg my-4`}
+                  dangerouslySetInnerHTML={{ __html: post.summary }}
+                />
+                <div className={'flex items-center'}>
+                  <SVG
+                    model={'category'}
+                    className={'w-5 h-5 fill-tertiary mr-1'}
+                  />
+                  <ul className={'my-2'}>
+                    {post.categories.map((category, i) => (
+                      <li
+                        key={i}
+                        className={
+                          'inline-block bg-tertiary text-black text-sm px-2 mr-3'
+                        }
+                      >
+                        {category.toUpperCase()}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div
-                className={
-                  'relative -left-4 my-2 bg-tertiary w-[200px] h-[1px]'
-                }
-              />
-              <div className={`text-lg mt-4`}>{post.summary}</div>
+              <div className={'absolute bottom-0 right-0 w-2 h-2 bg-primary'} />
+              <div className={'divider dv-inverted mt-4'} />
             </li>
           );
         })}

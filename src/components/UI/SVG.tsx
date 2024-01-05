@@ -9,7 +9,10 @@ type SVGModels =
   | 'server'
   | 'X'
   | 'hamburger'
-  | 'inward-X';
+  | 'inward-X'
+  | 'category'
+  | 'back-arrow'
+  | 'calendar';
 
 export function SVG(props: SVGProps) {
   switch (props.model) {
@@ -132,6 +135,68 @@ export function SVG(props: SVGProps) {
             strokeLinecap={'round'}
             strokeLinejoin={'round'}
             d={`M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25`}
+          />
+        </svg>
+      );
+
+    case 'category':
+      return (
+        <svg
+          xmlns={'http://www.w3.org/2000/svg'}
+          viewBox={'0 0 20 20'}
+          fill={'currentColor'}
+          className={props.className}
+        >
+          <path
+            d={
+              'M7 3.5A1.5 1.5 0 0 1 8.5 2h3.879a1.5 1.5 0 0 1 1.06.44l3.122 3.12A1.5 1.5 0 0 1 17 6.622V12.5a1.5 1.5 0 0 1-1.5 1.5h-1v-3.379a3 3 0 0 0-.879-2.121L10.5 5.379A3 3 0 0 0 8.379 4.5H7v-1Z'
+            }
+          />
+          <path
+            d={
+              'M4.5 6A1.5 1.5 0 0 0 3 7.5v9A1.5 1.5 0 0 0 4.5 18h7a1.5 1.5 0 0 0 1.5-1.5v-5.879a1.5 1.5 0 0 0-.44-1.06L9.44 6.439A1.5 1.5 0 0 0 8.378 6H4.5Z'
+            }
+          />
+        </svg>
+      );
+
+    case 'back-arrow':
+      return (
+        <svg
+          xmlns={'http://www.w3.org/2000/svg'}
+          viewBox={'0 0 20 20'}
+          fill={'currentColor'}
+          className={props.className}
+        >
+          <path
+            fillRule={'evenodd'}
+            d={
+              'M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z'
+            }
+            clipRule={'evenodd'}
+          />
+        </svg>
+      );
+
+    case 'calendar':
+      return (
+        <svg
+          xmlns={'http://www.w3.org/2000/svg'}
+          viewBox={'0 0 16 16'}
+          fill={'currentColor'}
+          className={props.className}
+        >
+          <path
+            d={
+              'M5.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM5 10.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM10.25 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM7.25 8.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM8 9.5A.75.75 0 1 0 8 11a.75.75 0 0 0 0-1.5Z'
+            }
+          />
+          <path
+            fillRule={'evenodd'}
+            d={
+              'M4.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-5V1.75A.75.75 0 0 0 4.75 1ZM3.5 7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v4.5a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7Z'
+            }
+            clipRule={'evenodd'}
           />
         </svg>
       );

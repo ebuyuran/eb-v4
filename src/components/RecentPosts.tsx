@@ -11,7 +11,7 @@ export function RecentPosts() {
       </div>
       <div className={'divider my-4 mb-8'} />
       <ul
-        className={`flex flex-col flex-wrap gap-6 md:flex-row selection:bg-secondary`}
+        className={`recent-posts flex flex-col flex-wrap gap-6 md:flex-row selection:bg-secondary`}
       >
         {postIDs.slice(0, 4).map((post) => {
           const postDetail = allPosts[post];
@@ -19,7 +19,7 @@ export function RecentPosts() {
             <li
               key={post}
               className={
-                'md:w-[calc(50%-.75rem)] bg-secondary/10 border border-secondary p-4'
+                'relative md:w-[calc(50%-.75rem)] bg-secondary/10 border border-secondary p-4'
               }
             >
               <div className={'relative pt-1'}>
@@ -38,7 +38,10 @@ export function RecentPosts() {
               <div className={'text-neutral-400'}>
                 {postDetail.date.toDateString()}
               </div>
-              <p className={'m-0'}>{postDetail.summary}</p>
+              <div
+                className={'mt-2'}
+                dangerouslySetInnerHTML={{ __html: postDetail.short_summary }}
+              />
             </li>
           );
         })}

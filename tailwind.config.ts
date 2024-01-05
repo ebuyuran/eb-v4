@@ -32,12 +32,6 @@ const config: Config = {
         glitch_interval:
           '10s steps(5, end) 0s infinite normal both running glitch_interval',
       },
-      backgroundImage: {
-        'clipped-yellow-tr':
-          'linear-gradient(45deg, rgba(255,229,0,1) 95%, rgba(255,229,0,0) 95%)',
-        'clipped-yellow-bl':
-          'linear-gradient(225deg, rgba(255,229,0,1) 90%, rgba(255,229,0,0) 90%)',
-      },
       colors: {
         primary: '#ffe500',
         secondary: '#00ffff',

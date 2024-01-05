@@ -5,7 +5,7 @@ export function Skills() {
     <>
       <div className={'flex justify-between items-center'}>
         <h2
-          className={`pl-4 pr-5 py-2 text-[18pt] font-medium bg-r text-black bg-clipped-yellow-tr`}
+          className={`pl-4 pr-5 py-2 text-[18pt] font-medium bg-primary text-black clipped-tr`}
         >
           FRONT-END SKILLS
         </h2>
