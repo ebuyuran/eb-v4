@@ -1,4 +1,5 @@
 import { unbounded } from '@/assets/fonts';
+import Link from 'next/link';
 import { Skills } from '@/components/Skills';
 import { RecentPosts } from '@/components/RecentPosts';
 import { Button } from '@/components/UI/UI';
@@ -12,19 +13,21 @@ function Home() {
       </p>
       <div className={'max-w-2xl pb-4 [&>p]:text-lg [&>p]:leading-5'}>
         <p className={'py-2'}>
-          I&apos;m a Sn. Front-End Developer from Istanbul with 8 years of
-          experience, specializing in building modern user interfaces by React &
-          TypeScript with a strong emphasis on aesthetics.
+          I am a multi-diciplinary Front-End Engineer with a focus on merging
+          creativity and technology to make the web beautiful. With 8+ years of
+          experience, I have gained a solid grasp of core web technologies,
+          performance principles, typography, UI, and UX.
         </p>
-        <p className={'py-2'}>
-          Having worked across products used by millions of people, I&apos;m
-          looking to utilize this experience to create new and exciting apps.
-          I&apos;ve worked for companies such as Riot Games, Spinmatic
-          Entertainment, Hyundai, and Huawei.
+        <p className={'py-2 mb-4'}>
+          I had the privilege of working for Riot Games, Spinmatic
+          Entertainment, Hyundai, Huawei, and GrubTech. Developing games and
+          products used by millions of people across the world.
         </p>
       </div>
       <div>
-        <Button label={'READ MORE'} />
+        <Link href={'/about'}>
+          <Button label={'READ MORE'} />
+        </Link>
       </div>
       <div className={'mt-16'}>
         <RecentPosts />

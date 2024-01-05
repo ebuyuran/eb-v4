@@ -4,7 +4,7 @@ export const education_data = [
     field: 'Visual Communication',
     period: '2009 - 2015',
     studied: [
-      'Advertisement, Typography, Web Development, Graphic Design, Animation, Screenwriting, Cinema, Photography',
+      'Advertisement, Typography, Web Development, Graphic Design, Animation, Screenwriting, Cinema, Photography, Intercultural Relations',
     ],
   },
   {

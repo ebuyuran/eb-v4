@@ -5,7 +5,7 @@ function About() {
     <div>
       <div className={'flex flex-col justify-between p-9 md:flex-row'}>
         <div
-          className={'flex justify-center items-center md:order-2 md:w-[50%]'}
+          className={'flex justify-center items-center md:order-2 md:w-[40%]'}
         >
           <Image
             src={'/assets/img/profile.png'}
@@ -18,41 +18,54 @@ function About() {
           />
         </div>
         <div
-          className={'mt-12 text-lg md:mt-0 md:pl-6 md:w-[50%] lg:w-[40rem]'}
+          className={
+            'flex items-center mt-12 text-lg md:mt-0 md:w-[50%] lg:w-[40rem]'
+          }
         >
           <p>
-            My father gifted me my first computer when I was 10 years old. It
-            had an internet connection so from the beginning, I was surfing on
-            the web. After 6 years surfing among websites, I became curious
-            about Web Design and at the age of 16, I started to learn HTML, CSS,
-            and Photoshop.
-          </p>
-          <p>
-            In 2005 I took on my first paid freelance web design job. After a
-            couple of months I became one of the moderators on the PHP-Fusion
-            Turkey Official National Support Site and started to learn PHP.
+            I am a Front-End Engineer from Istanbul with +8 years of experience,
+            specializing in building modern user interfaces by Next.js &
+            TypeScript with a strong emphasis on aesthetics.
           </p>
         </div>
       </div>
 
-      <div className={'px-9 pb-9 text-lg lg:pr-48'}>
-        <h2>BIOGRAPHY</h2>
+      <div className={'px-9 pb-9 text-lg lg:pr-48 [&>p]:my-4'}>
+        <h2 className={'my-4'}>BIOGRAPHY</h2>
         <p>
-          But I found himself enjoying design more than coding and decided to
-          focus on improving my skills in design. Some of my PHP-Fusion themes
-          made it to the top 5 in the PHP-Fusion global theme database. In 2007,
-          I established my own Photoshop tutorials website called
-          photoshopturk.org and published tutorials for beginners.
+          Ever since I had an Amiga 500 in my hands at 1992 when I was 4. I was
+          mesmerized by the colours, shapes, technology and everything that came
+          along for the ride with user interfaces. The vast majority of my
+          childhood was spent admiring what we could do with our computers, and
+          they weren’t even doing much at the time.
         </p>
         <p>
-          In 2010, after 5 years of working at various companies, I joined
-          Enustkat Interactive as their Lead Designer and worked there for
-          almost 5 years receiving 4 awards and countless projects.
+          My family were convinced that I should be studying something related
+          to computers. So, I went to one of the most prestigious vocational
+          high-schools (that’s a thing in Turkey) where I got my first taste of
+          programming with Pascal, and first taste of animations with Flash.
+          I’ve realised I could be making static websites with Flash at the time
+          so I’ve made a bit of money with freelance work.
         </p>
         <p>
-          With 16 years total experience including branding, graphic design, art
-          direction, and UI/UX design, now I work at Community Gaming as Lead
-          Product Designer.
+          I used to enjoy making cheesy animations in Flash a little too much to
+          study Computer Science, so I’ve decided to study Visual Communication
+          in university. Which was one of the best decisions I’ve ever made. I
+          had the chance to study Advertisement, Typography, Web Development,
+          Graphic Design, Animation, Screenwriting, Cinema, Photography and
+          Intercultural Relations at basic level.
+        </p>
+        <p>
+          Around this time, I found the solution to my dilemma between pursuing
+          programming or a creative field by discovering Front-End Development.
+          Which is the perfect combination of technology and aesthetics.
+        </p>
+        <p>
+          Ever since, I have written thousands of lines of code, built many
+          projects, and worked with numerous teams. My work in Riot Games has
+          reached millions of gamers around the world. As a gamer since early
+          childhood, it meant a lot to me to be part of a project that other
+          gamers would enjoy playing.
         </p>
       </div>
     </div>
